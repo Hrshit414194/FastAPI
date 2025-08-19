@@ -5,9 +5,9 @@ from langchain_community.document_loaders import PyPDFLoader
 from chunks import ParagraphSplitter, KeywordSplitter, TableSplitter, TopicSplitter, ContentAwareSplitter, SemanticSplitter, EmbeddingChunker
 from db_utils import run_strategy, embeddings
 
-# ------------------------
+
 # Load PDFs
-# ------------------------
+
 pdf_files = ["Chunking_RAG1.pdf", "final_report_Harshit.pdf"]
 pages = []
 
@@ -22,9 +22,9 @@ for file_path in pdf_files:
 
 print(f"✅ Total pages loaded: {len(pages)}")
 
-# ------------------------
+
 # Strategies
-# ------------------------
+
 from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter, TokenTextSplitter
 
 strategies = {
@@ -41,9 +41,9 @@ strategies = {
     "EmbeddingChunking": EmbeddingChunker(embeddings, max_chunk_size=1000, similarity_threshold=0.8),
 }
 
-# ------------------------
+
 # FastAPI app
-# ------------------------
+
 app = FastAPI(title="RAG PDF Chatbot API")
 
 class QueryRequest(BaseModel):
