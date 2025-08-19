@@ -4,9 +4,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 from langchain.schema import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter, TokenTextSplitter
 
-# ------------------------
 # Custom Chunking Classes
-# ------------------------
+
 class ParagraphSplitter:
     def split_documents(self, docs):
         chunks = []
